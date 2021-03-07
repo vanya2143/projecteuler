@@ -11,6 +11,7 @@ find the sum of the even-valued terms.
 """
 
 
+# Fibonacci generator
 def fib():
     a, b = 0, 1
     while True:
@@ -18,12 +19,14 @@ def fib():
         a, b = b, b + a
 
 
+# The generator only returns even Fibonacci numbers
 def fib_even():
     for i in fib():
         if i % 2 == 0:
             yield i
 
 
+# The sum of all even numbers up to four million
 def sum_even():
     sum_elements = 0
     for i in fib_even():
