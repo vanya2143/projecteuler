@@ -14,19 +14,12 @@ def reverse_number(n, partial=0):
     return reverse_number(n // 10, partial * 10 + n % 10)
 
 
-def find_palindrome(n):
-    num = n
-
-    while num > 0:
-        res = num * n
-        if res == reverse_number(res):
-            return res
-        num -= 1
+def find_palindrome():
+    for x in range(999, 900, -1):
+        for y in range(x, 900, -1):
+            if reverse_number(x * y) == x * y:
+                return x * y
 
 
 if __name__ == '__main__':
-    print(f'Palindrome of two 3-digit number: {find_palindrome(999)}')
-
-    assert find_palindrome(123) == 10701
-    assert find_palindrome(99) == 9009
-    assert find_palindrome(999) == 90909
+    print(f'Largest palindrome of two 3-digit numbers: {find_palindrome()}')
