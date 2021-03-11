@@ -11,7 +11,7 @@ NUMBER = 20
 
 def total_number():
     """
-    Looking for the total number that is divisible by all numbers from 1 to 20
+    The function looks for the total number that is divisible by all numbers from 1 to 20
     """
     mul = NUMBER
     number = mul
