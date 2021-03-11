@@ -17,8 +17,9 @@ def reverse_number(n, partial=0):
 def find_palindrome():
     for x in range(999, 900, -1):
         for y in range(x, 900, -1):
-            if reverse_number(x * y) == x * y:
-                return x * y
+            num = x * y
+            if reverse_number(num) == num:
+                return num
 
 
 if __name__ == '__main__':
