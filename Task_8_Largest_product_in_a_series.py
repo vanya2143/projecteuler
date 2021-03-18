@@ -37,18 +37,18 @@ def find_greatest_product(d):
     length_of_number = len(d)
     p_start = 0  # pointer start
     p_end = 13  # pointer end
-    gather_digit = 0
+    max_digit = 0
 
     while p_end < length_of_number:
         new_digit = reduce(mul, [int(x) for x in d[p_start:p_end]])
 
-        if new_digit > gather_digit:
-            gather_digit = new_digit
+        if new_digit > max_digit:
+            max_digit = new_digit
 
         p_start += 1
         p_end += 1
 
-    return gather_digit
+    return max_digit
 
 
 if __name__ == '__main__':
