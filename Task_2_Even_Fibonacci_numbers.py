@@ -21,9 +21,7 @@ def fib():
 
 # The generator only returns even Fibonacci numbers
 def fib_even():
-    for i in fib():
-        if i % 2 == 0:
-            yield i
+    return (x for x in fib() if x % 2 == 0)
 
 
 # The sum of all even numbers up to four million
