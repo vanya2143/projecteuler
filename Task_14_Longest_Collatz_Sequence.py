@@ -16,7 +16,10 @@ Question: Which starting number, under one million, produces the longest chain?
 Note: Once the chain starts, the terms are allowed to go above one million.
 """
 
+import time
+from functools import cache
 
+@cache
 def get_sequence_length(digit):
     if digit == 1:
         return 1
@@ -28,6 +31,7 @@ def get_sequence_length(digit):
 
 
 if __name__ == "__main__":
+    start = time.time()
     max_starting_number = 0
     max_length = 0
     for i in range(1, 1000000):
@@ -36,6 +40,10 @@ if __name__ == "__main__":
             max_starting_number = i
             max_length = res
 
-    print(max_starting_number)
+    finish = time.time() - start
+    print(
+        f"The result is: {max_starting_number}, "
+        f"executed in {finish} seconds."
+    )
 
 # the answer is 837799
